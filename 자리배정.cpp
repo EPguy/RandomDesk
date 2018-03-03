@@ -4,8 +4,12 @@
 #include <Windows.h>		// include for function : sleep()  
 
    int nCounter = 0;	int i, k, j; 
-   char num[20];
-   int temp2=0; 
+   char *num[] = {"고정현", "김경민", "김다은", "김동휘",
+   				   "김성욱", "김영찬", "김주성", "노시현",
+				   "문준협", "박예린", "박지은", "성유정",
+				   "신윤성", "엄태원", "이승우", "이주용",
+				   "최승호", "홍순찬", "황선우", "황신우"};
+   char* temp2 = 0; 
    int temp=0;
 
 void ChangeArray()
@@ -28,7 +32,7 @@ void RandomResult()
    		for(j = 0; j < 4; j++)
    		{
 			Sleep(1000);						// sleep(1000) = 1s
-   			printf("\a\t   %d\t",num[nCounter++]);
+   			printf("\a\t%s\t",num[nCounter++]);
    			if (j % 2 == 1) putchar('\n');
 		}
 		putchar('\n');
@@ -38,10 +42,6 @@ void RandomResult()
 int main() 
 { 
  
-   for (i=0;i<20;i++) 
-   { 
-      num[i] =i+1; 
-   } 
    srand((unsigned int)time(NULL));
    ChangeArray();
    RandomResult();
